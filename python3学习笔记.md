@@ -13,6 +13,8 @@
 
 ​				c、程序的开发产能由于运行性能
 
+​				d、python的源码默认使用utf-8编码，支持中文变量名
+
 ​	2）、用IDLE 编译python Shell 是键入python语言文本和程序交互的途径
 
 ​	3）、>>>print("hello world"*5)是正确的指令,而>>>print(" hello world"+5)报错
@@ -115,13 +117,177 @@
 
 ​	字符串:引号括住的文字,多行字符串的话需要用"""  """" 包含住,将一个对象转换为字符串 str()
 
+```python
+myString.isalnum()#所有字符是否是数字或者字母
+myString.isalpha()#所有的字符是否是字母
+myString.isdigit()#所有的字符是否为数字
+myString.islower()#所有的字符是否都是小写
+myString.isupper()#所有的字符都是大写
+myString.istitle()#所有的单词是否首字母大写
+myString.isspace()#所有的字符是否都是空白字符
+```
+
+
+
 ​	获取变量的数据类型
 
 ​		type()
 
-​		推荐使用
+​	推荐使用
 
-​			isinstance()
+​		isinstance()
+
+  	判断一个变量是不是数字的方法: isdigit()
+
+​								while not temp.isdigit()
+
+##### python算术操作符
+
+​	python3中的整数除法，
+
+​		//（表示双除号）会取地板除法，即得到的结果会向下取整。
+
+​		/（表示一个除号），正常的除法
+
+​		比较运算符的优先级大于逻辑运算符
+
+```python
+例如3<4 and 8>9 可以写成 (3<4) and (8>9)
+幂运算和一元操作符的优先级:幂运算比左侧的一元操作符优先级高,例如-3**2=-9;比右侧的一元操作符低 例如 3**-2 = 0.1111111111111111,即3^(-2)次方
+ **表示幂运算,3**2 == 3*3
+```
+
+```python
+逻辑操作符
+	and(与) not(非) or (或)
+    优先级:not>and>or
+    3<4<5===(3<4) and (4<5)
+```
+
+优先级:幂运算>正负号>算术运算符>比较运算符>逻辑运算符
+
+##### python中分支和循环语句
+
+​	打飞机小游戏的组成和结构：
+
+```python
+#加载背景音乐
+#播放背景音乐(设置单曲循环)
+#我方飞机诞生
+intervar = 0 (设置小飞机加载的间隔,不然的话小飞机会出现的太多)
+while True:
+    if #用户是否点击关闭按钮
+    	#退出程序
+    interval+=1
+    if interval==50:
+        interval=0
+        #小飞机诞生
+    #小飞机移动一个位置
+    #屏幕刷新
+    if:#用户鼠标产生移动
+        #我方飞机中心位置 = 用户鼠标位置
+        #屏幕刷新
+    if:#我方飞机与小飞机碰撞
+        #我放飞机挂掉,播放装机音乐
+        #修改我方飞机图案
+        #显示游戏借宿
+        #渐渐关闭音乐
+```
+
+####python中的条件表达式
+
+​	三元操作符
+
+```python
+x , y  =  4, 5
+if x < y:
+    small = x
+else:
+    small = y
+ #改为三元操作符
+small = x if x < y else y
+#assert断言
+	当这个关键字后边的条件为假的时候，程序会
+    自动崩溃并抛出AeertionError的异常
+		flag = True
+		temp = input("input your order")
+		if temp=="1":
+    		print(type(temp))
+		else:
+    		flag = False
+		assert flag
+		print('I am behind assert,hahaha')
+```
+
+#### while循环
+
+```python
+#break循环会跳出循环体
+bingo = "草拟吗，楼上钻你妈坟头呢？"
+answer = input('请输入现在最想说的话')
+while True:
+    if answer == bingo:
+        break
+    answer = input("骂的不爽，再来！！！")
+print("傻逼玩意，半夜钻墙")
+#continue会跳出本次循环,执行下一次循环
+for i in range(10):
+    if i%2= 0:
+        print(i)
+        continue
+    i+=2
+    print(i)
+```
+
+
+
+#### for循环
+
+```python
+#example one
+forString = "ayada heheh balabala"
+newString = ""
+for i in forString:
+    if i ==" ":
+        i=""
+    newString +=i+"+"
+print(len(newString))#显示字符串的长度
+#example two
+myArray = ["one","mo\'ijo","smxjj","daji","lover is dreamer","laogou"]
+for item in myArray:
+    print(item)
+#for循环和range方法
+#range方法默认有三个参数,(startnum,endnum,step)
+#起始位置,结束位置,步长
+for i in range(10):
+    print(i)
+
+```
+
+####python列表
+
+##### 创建列表
+
+```python
+member = ["逗比","sayHello","minx",3.15415,["heheh"],{"first":'ggg'}]
+for item in member:
+    print(item)
+#添加元素
+member.append("isallright,这只能加一个元素")
+member.extend(["gogo","卧槽啊,这要添加一个参数"])
+```
+
+
+
+
+
+
+
+
+
+​		
+
+​	
 
 #### 2、面向对象的编程思维
 
